@@ -13,5 +13,5 @@ npm start
 ## Technology stack
 
 - [Express](https://expressjs.com/es/)
-- Built Node JS
-- MongoDB
+- [Node JS](https://nodejs.org/en)
+- [MongoDB](https://www.mongodb.com/)
