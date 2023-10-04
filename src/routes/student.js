@@ -8,7 +8,7 @@ router.get("/students", async (_, res) => {
     const data = await studentSchema.find();
     res.json(data);
   } catch (error) {
-    res.json({ message: error });
+    res.status(500).send('Error getting students"');
   }
 });
 
@@ -20,7 +20,7 @@ router.post("/students", async (req, res) => {
     const data = await student.save();
     res.json(data);
   } catch (error) {
-    res.json({ message: error });
+    res.status(500).send("Error creating a student");
   }
 });
 
@@ -31,7 +31,7 @@ router.get("/students/:id", async (req, res) => {
     const data = await studentSchema.findById(id);
     res.json(data);
   } catch (error) {
-    res.json({ message: error });
+    res.status(500).send("Error getting a student");
   }
 });
 
@@ -46,7 +46,7 @@ router.put("/students/:id", async (req, res) => {
     );
     res.json(data);
   } catch (error) {
-    res.json({ message: error });
+    res.status(500).send("Error editing a student");
   }
 });
 
@@ -57,7 +57,7 @@ router.delete("/students/:id", async (req, res) => {
     const data = await studentSchema.findByIdAndDelete(id);
     res.json(data);
   } catch (error) {
-    res.json({ message: error });
+    res.status(500).send("Error deleting a student");
   }
 });
 
